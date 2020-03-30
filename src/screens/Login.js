@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import LoginButton from '../components/LoginButton'
+import Button from '../components/LoginButton'
 
 class Login extends Component {
     constructor(props) {
@@ -46,7 +46,7 @@ class Login extends Component {
                                 <ShowPasswordIcon src={require('../asset/show-password.png')} alt="" className="show-password" onClick={()=>{this.changeMode()}}/>
                             </CredentialContainer>
                             <ForgotPasswordLabel><span className="try-again-label">{"Try again or "}</span>Reset password</ForgotPasswordLabel>
-                            <LoginButton onPress={()=>{this.handleOnClick()}} label={"Login"}/>
+                            <Button onPress={()=>{this.handleOnClick()}} label={"Login"}/>
                         </LoginForm>
                     </LeftPad>
                     <RightPad/>

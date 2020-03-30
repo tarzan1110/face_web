@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components'
 
-class LoginButton extends Component {
+class Button extends Component {
     constructor(props){
             super(props)
             this.state={
@@ -46,4 +46,4 @@ const GotoButton = styled.button`
     box-shadow:5px 5px 5px #7e62ac83;
     color:white;
 `
-export default LoginButton
+export default Button
