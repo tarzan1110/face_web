@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Button from '../components/LoginButton'
+import Button from '../components/Button'
 
 class Login extends Component {
     constructor(props) {
