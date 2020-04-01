@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 
 const COLOR_DAMSON = '#954f9f'
+const COLOR_GREY = "#83858f"
+const COLOR_DARK_GREY = '#66686e'
+const COLOR_NEED_REVIEW = '#4b4a50'
 const MenuItem = ({selected,label,onSelect})=>{
     return(
         <SelectedMenu onClick={()=>{onSelect()}}>
@@ -107,10 +110,10 @@ class Order extends Component {
                          <InviteButtonLabel>Invite Candidate(s)</InviteButtonLabel>
                     </InviteButton>
                 </HeaderContainer>
-                <div className="container-cover" style={{overflowX:'auto'}}>
+                <TableContainerCover style={{overflowX:'auto'}}>
                 <TableContainer style={{minWidth:1400}}>
                     <TableHeader>
-                        <CellItem flexPortion={1} type={"header"} color={"#9ea1ac"}>ID</CellItem>
+                        <KeyCellItem flexPortion={1} type={"header"}  color={"#9ea1ac"}>ID</KeyCellItem>
                         <CellItem flexPortion={1} type={"header"} color={"#9ea1ac"}>NAME</CellItem>
                         <CellItem flexPortion={1} type={"header"} color={"#9ea1ac"}>PACKAGE</CellItem>
                         <CellItem flexPortion={1} type={"header"} color={"#9ea1ac"}>AMOUNT</CellItem>
@@ -120,37 +123,37 @@ class Order extends Component {
                         <CellItem flexPortion={1} type={"header"} color={"#9ea1ac"}>STATUS</CellItem>
                     </TableHeader>
                     <TableContentLine>
-                        <CellItem flexPortion={1} type={"content"} fontWeight={"bold"} color={"black"}>50392</CellItem>
-                        <CellItem flexPortion={1} type={"content"}>Loyola, Wilson John</CellItem>
-                        <CellItem flexPortion={1} type={"content"}>Criminal Background</CellItem>
-                        <CellItem flexPortion={1} type={"content"}>$20.00</CellItem>
+                        <KeyCellItem flexPortion={1} type={"content"} color={COLOR_DARK_GREY}>50392</KeyCellItem>
+                        <CellItem flexPortion={1} type={"content"} fontWeight={'bold'}>Loyola, Wilson John</CellItem>
+                        <CellItem flexPortion={1} type={"content"} fontWeight={'bold'}>Criminal Background</CellItem>
+                        <CellItem flexPortion={1} type={"content"} fontWeight={'bold'}>$20.00</CellItem>
                         <CellItem flexPortion={1} type={"content"}><CheckItem/></CellItem>
                         <CellItem flexPortion={1} type={"content"}></CellItem>
                         <CellItem flexPortion={2} type={"content"}><NeedReviewItem/></CellItem>
                         <CellItem flexPortion={1} type={"content"}><PendingItem/></CellItem>
                     </TableContentLine>
                     <TableContentLine>
-                        <CellItem flexPortion={1} type={"content"} fontWeight={"bold"} color={"black"}>798078</CellItem>
-                        <CellItem flexPortion={1} type={"content"}>Schnedier, Wilson John</CellItem>
-                        <CellItem flexPortion={1} type={"content"}>Criminal Background</CellItem>
-                        <CellItem flexPortion={1} type={"content"}>$30.00</CellItem>
+                        <KeyCellItem flexPortion={1} type={"content"}  color={COLOR_DARK_GREY}>798078</KeyCellItem>
+                        <CellItem flexPortion={1} type={"content"}  color={COLOR_DAMSON}>Schnedier, Wilson John</CellItem>
+                        <CellItem flexPortion={1} type={"content"}  >Criminal Background</CellItem>
+                        <CellItem flexPortion={1} type={"content"} >$30.00</CellItem>
                         <CellItem flexPortion={1} type={"content"}><CheckItem/></CellItem>
                         <CellItem flexPortion={1} type={"content"}></CellItem>
                         <CellItem flexPortion={2} type={"content"}><NeedReviewItem/></CellItem>
                         <CellItem flexPortion={1} type={"content"}><PendingItem/></CellItem>
                     </TableContentLine>
                     <TableContentLine>
-                        <CellItem flexPortion={1} type={"content"} fontWeight={"bold"} color={"black"}>297609</CellItem>
-                        <CellItem flexPortion={1} type={"content"} color={COLOR_DAMSON} fontStyle={"italic"}>Peters, Brooke</CellItem>
-                        <CellItem flexPortion={1} type={"content"}>Criminal Background</CellItem>
-                        <CellItem flexPortion={1} type={"content"} color={COLOR_DAMSON} fontStyle={"italic"}>$30.00</CellItem>
+                        <KeyCellItem flexPortion={1} type={"content"} color={COLOR_DARK_GREY}>297609</KeyCellItem>
+                        <CellItem flexPortion={1} type={"content"}  color={COLOR_GREY} fontStyle={"italic"}>Peters, Brooke</CellItem>
+                        <CellItem flexPortion={1} type={"content"}  >Criminal Background</CellItem>
+                        <CellItem flexPortion={1} type={"content"}  color={COLOR_DAMSON} fontStyle={"italic"}>$30.00</CellItem>
                         <CellItem flexPortion={1} type={"content"}><CloseItem/></CellItem>
                         <CellItem flexPortion={1} type={"content"}><WarnItem/></CellItem>
                         <CellItem flexPortion={2} type={"content"}><AdverseItem/></CellItem>
                         <CellItem flexPortion={1} type={"content"}><CompleteItem/></CellItem>
                     </TableContentLine>
                     <TableContentLine>
-                        <CellItem flexPortion={1} type={"content"} fontWeight={"bold"} color={"black"}>509600</CellItem>
+                        <KeyCellItem flexPortion={1} type={"content"}  color={COLOR_DARK_GREY}>509600</KeyCellItem>
                         <CellItem flexPortion={1} type={"content"}>Zimmerman, Brand off</CellItem>
                         <CellItem flexPortion={1} type={"content"}>Criminal Background</CellItem>
                         <CellItem flexPortion={1} type={"content"}>$30.00</CellItem>
@@ -160,7 +163,7 @@ class Order extends Component {
                         <CellItem flexPortion={1} type={"content"}><CompleteItem/></CellItem>
                     </TableContentLine>
                     <TableContentLine>
-                        <CellItem flexPortion={1} type={"content"} fontWeight={"bold"} color={"black"}>566922</CellItem>
+                        <KeyCellItem flexPortion={1} type={"content"}  color={COLOR_DARK_GREY}>566922</KeyCellItem>
                         <CellItem flexPortion={1} type={"content"}>Hardy , Terence Michael</CellItem>
                         <CellItem flexPortion={1} type={"content"}>Criminal Background</CellItem>
                         <CellItem flexPortion={1} type={"content"}>$30.00</CellItem>
@@ -170,7 +173,7 @@ class Order extends Component {
                         <CellItem flexPortion={1} type={"content"}><PendingItem/></CellItem>
                     </TableContentLine>
                     <TableContentLine>
-                        <CellItem flexPortion={1} type={"content"} fontWeight={"bold"} color={"black"}>566922</CellItem>
+                        <KeyCellItem flexPortion={1} type={"content"} color={COLOR_DARK_GREY}>566922</KeyCellItem>
                         <CellItem flexPortion={1} type={"content"}>Hardy , Terence Michael</CellItem>
                         <CellItem flexPortion={1} type={"content"}>Criminal Background</CellItem>
                         <CellItem flexPortion={1} type={"content"}>$30.00</CellItem>
@@ -180,7 +183,7 @@ class Order extends Component {
                         <CellItem flexPortion={1} type={"content"}><CompleteItem/></CellItem>
                     </TableContentLine>
                     <TableContentLine>
-                        <CellItem flexPortion={1} type={"content"} fontWeight={"bold"} color={"black"}>566922</CellItem>
+                        <KeyCellItem flexPortion={1} type={"content"} color={COLOR_DARK_GREY}>566922</KeyCellItem>
                         <CellItem flexPortion={1} type={"content"}>Hardy , Terence Michael</CellItem>
                         <CellItem flexPortion={1} type={"content"}>Criminal Background</CellItem>
                         <CellItem flexPortion={1} type={"content"}>$30.00</CellItem>
@@ -190,7 +193,7 @@ class Order extends Component {
                         <CellItem flexPortion={1} type={"content"}><CompleteItem/></CellItem>
                     </TableContentLine>
                     <TableContentLine>
-                        <CellItem flexPortion={1} type={"content"} fontWeight={"bold"} color={"black"}>566922</CellItem>
+                        <KeyCellItem flexPortion={1} type={"content"} color={COLOR_DARK_GREY}>566922</KeyCellItem>
                         <CellItem flexPortion={1} type={"content"}>Hardy , Terence Michael</CellItem>
                         <CellItem flexPortion={1} type={"content"}>Criminal Background</CellItem>
                         <CellItem flexPortion={1} type={"content"}>$30.00</CellItem>
@@ -200,7 +203,17 @@ class Order extends Component {
                         <CellItem flexPortion={1} type={"content"}><CompleteItem/></CellItem>
                     </TableContentLine>
                     <TableContentLine>
-                        <CellItem flexPortion={1} type={"content"} fontWeight={"bold"} color={"black"}>566922</CellItem>
+                        <KeyCellItem flexPortion={1} type={"content"}  color={COLOR_DARK_GREY}>566922</KeyCellItem>
+                        <CellItem flexPortion={1} type={"content"}>Hardy , Terence Michael</CellItem>
+                        <CellItem flexPortion={1} type={"content"}>Criminal Background</CellItem>
+                        <CellItem flexPortion={1} type={"content"}>$30.00</CellItem>
+                        <CellItem flexPortion={1} type={"content"}><CheckItem/></CellItem>
+                        <CellItem flexPortion={1} type={"content"}><WarnItem/></CellItem>
+                        <CellItem flexPortion={2} type={"content"}><ApprovedItem/></CellItem>
+                        <CellItem flexPortion={1} type={"content"}><CompleteItem/></CellItem>
+                    </TableContentLine>
+                    <TableContentLine>
+                        <KeyCellItem flexPortion={1} type={"content"}  color={COLOR_DARK_GREY}>566922</KeyCellItem>
                         <CellItem flexPortion={1} type={"content"}>Hardy , Terence Michael</CellItem>
                         <CellItem flexPortion={1} type={"content"}>Criminal Background</CellItem>
                         <CellItem flexPortion={1} type={"content"}>$30.00</CellItem>
@@ -210,7 +223,8 @@ class Order extends Component {
                         <CellItem flexPortion={1} type={"content"}><CompleteItem/></CellItem>
                     </TableContentLine>
                 </TableContainer>
-                </div>
+                </TableContainerCover>
+                <Logo src={require("../components/logo.svg")} alt=""/>
             </OrderScreenContainer>
         )
     }
@@ -220,10 +234,11 @@ export default Order
 const OrderScreenContainer = styled.div`
     flex:1;
     padding 20px 20px 20px 20px;
+    position:relative;
 `
 const NavBackground = styled.div`
     width:100%;
-    height:300px;
+    height:200px;
     background-image: url("/headerbar.png");
     background-repeat: no-repeat;
     background-size:cover;
@@ -234,21 +249,26 @@ const NavBackground = styled.div`
     minimum-height:350px;
     overflow:hidden;
     border-bottom-right-radius:38px;
+    border-bottom-left-radius:38px;
 `
 const HeaderContainer = styled.div`
     width:100%;
     display:flex;
     padding:0 80px 0 80px;
-    margin-top:20px;
+    margin-top:35px;
     margin-bottom:50px;
 `
 const TableName = styled.div`
-    font-size:18px;
+    font-size:24px;
+    color:#474950;
     font-weight:bold;
+    font-family:'Gotham Bold';
 `
 const Padder = styled.div`
     flex:1;
     color:#74788d;
+    font-family:'Gotham';
+    font-size:13px;
     font-weight:500;
     padding-left:40px;
 `
@@ -266,14 +286,17 @@ const InviteButton = styled.div`
 `
 const InviteButtonLabel = styled.div`
     margin-left:7px;
+    font-family:'Raleway';
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:1px;
 `
 const SearchPad = styled.div`
-    margin-right:7px;
-    margin-left:7px;
+    margin:30px 7px 7px 0px;
     padding-left:10px;
     padding-right:10px;
     width:600px;
-    height:50px;
+    height:55px;
     background-color:white;
     border-radius:7px;
     display:flex;
@@ -294,12 +317,17 @@ const SearchCategory = styled.div`
 `
 const SearchTitle = styled.div`
     flex:4;
+    font-family:'Gotham';
     font-weight:500;
     color:#6d66ae;
+    font-size:13px;
 `
 const Category = styled.div`
     flex:5;
-    font-weight:bold;
+    font-weight:500;
+    font-size:13px;
+    font-family:'Gotham';
+    color:#000000;
 `
 const CategorySymbol = styled.div`
     flex:1;
@@ -328,20 +356,21 @@ const SelectedMenuBackgroundBar = styled.div`
 `
 const SelectedMenuBackground = styled.div`
     width:100%;
-    height:100px;
+    height:64px;
     background-image: ${props=>props.selected?'url("/rectangle.png")':'none'};
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size:100% 64px;
     display:flex;
     align-items:center;
+    font-family:'Raleway';
     justify-content:center;
-    color:white;
+    color:#f7f8ff;
     font-weight:bold;
-    font-size:18px;
+    font-size:13px;
 `
 const MenuContainer = styled.div`
     width:100%;
-    height:100px;
+    height:64px;
     position:absolute;
     top:0;
     left:0;
@@ -373,18 +402,28 @@ const TableContainer =styled.div`
     padding:0 100px 0 100px;
     overflow-x: auto;
     white-space: nowrap;
+    minWidth:1400px;
     
 `
 const CellItem = styled.div`
 
-    font-weight:${props=>props.fontWeight};
+    font-weight:bold;
     flex:${props=>props.flexPortion};
     text-align:left;
     color:${props=>props.color};
-    font-size:14px;
-    font-weight:bold;
+    font-size:12px;
+    font-family:'Gotham';
     font-style:${props=>props.fontStyle}
+`
+const KeyCellItem = styled.div`
 
+    font-weight:500;
+    flex:${props=>props.flexPortion};
+    text-align:left;
+    color:${props=>props.color};
+    font-size:12px;
+    font-family:'Gotham';
+    font-style:${props=>props.fontStyle}
 `
 const NeedReviewItemContainer = styled.div`
     
@@ -438,6 +477,7 @@ const AdverseItemSymbol = styled.div`
 const NeedReviewItemLabel = styled.div`
     flex:1;
     text-align:center;
+    color:${COLOR_NEED_REVIEW};
 `
 const PendingItemContainer = styled.div`
     width:100px;
@@ -482,4 +522,14 @@ const CheckItemImg = styled.img`
 const WarnItemImg = styled.img`
     width:20px;
     height:20px;
+`
+const TableContainerCover = styled.div`
+    overflow-x:auto;
+`
+const Logo = styled.img`
+    position:absolute;
+    left:50px;
+    top:50px;
+    width:102px;
+    height:39px;
 `

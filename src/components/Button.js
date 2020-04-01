@@ -27,6 +27,8 @@ class Button extends Component {
     }
 }
 
+
+
 const GotoButton = styled.button`
     margin-top: 20px;
     width: 80%;
@@ -38,12 +40,12 @@ const GotoButton = styled.button`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-image: ${props=>props.disabled?'none':'url("/gradientBtnBg.png")'};
+    background-image:url("/gradientBtnBg.png");
     background-size: cover;
     border:none;
     border-width:0px;
     outline:none;
-    box-shadow:5px 5px 5px #7e62ac83;
+    box-shadow:${props=>props.disabled?'none':'5px 5px 5px #7e62ac83'};
     color:white;
 `
 export default Button
