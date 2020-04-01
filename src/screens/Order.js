@@ -5,9 +5,9 @@ const COLOR_DAMSON = '#954f9f'
 const COLOR_GREY = "#83858f"
 const COLOR_DARK_GREY = '#66686e'
 const COLOR_NEED_REVIEW = '#4b4a50'
-const MenuItem = ({selected,label,onSelect})=>{
+const MenuItem = ({selected,label,onSelect,onMouseEnter, onMouseLeave})=>{
     return(
-        <SelectedMenu onClick={()=>{onSelect()}}>
+        <SelectedMenu onClick={()=>{onSelect()}} onMouseEnter={()=>{!!onMouseEnter&&onMouseEnter()}} onMouseLeave={()=>{!!onMouseLeave&&onMouseLeave()}}>
             <SelectedMenuBackgroundBar selected={selected}/>
             <SelectedMenuBackground selected={selected} src={require("../asset/rectangle.png")}  alt="">{label}</SelectedMenuBackground>
         </SelectedMenu>
@@ -85,10 +85,10 @@ class Order extends Component {
             <OrderScreenContainer>
                 <NavBackground>
                         <MenuContainer>
-                            <MenuItem label={"Orders"} selected={selectedIndex===0} onSelect={()=>{this.setState({selectedIndex:0})}}/>
-                            <MenuItem label={"Packages"} selected={selectedIndex===1} onSelect={()=>{this.setState({selectedIndex:1})}}/>
-                            <MenuItem label={"Companies"} selected={selectedIndex===2} onSelect={()=>{this.setState({selectedIndex:2})}}/>
-                            <MenuItem label={"Users"} selected={selectedIndex===3} onSelect={()=>{this.setState({selectedIndex:3})}}/>
+                            <MenuItem label={"Orders"} selected={selectedIndex===0} onSelect={()=>{this.setState({selectedIndex:0})}} onMouseEnter={()=>{this.setState({selectedIndex:0})}} onMouseLeave={()=>{this.setState({selectedIndex:-1})}}/>
+                            <MenuItem label={"Packages"} selected={selectedIndex===1} onSelect={()=>{this.setState({selectedIndex:1})}} onMouseEnter={()=>{this.setState({selectedIndex:1})}} onMouseLeave={()=>{this.setState({selectedIndex:-1})}}/>
+                            <MenuItem label={"Companies"} selected={selectedIndex===2} onSelect={()=>{this.setState({selectedIndex:2})}} onMouseEnter={()=>{this.setState({selectedIndex:2})}} onMouseLeave={()=>{this.setState({selectedIndex:-1})}}/>
+                            <MenuItem label={"Users"} selected={selectedIndex===3} onSelect={()=>{this.setState({selectedIndex:3})}} onMouseEnter={()=>{this.setState({selectedIndex:3})}} onMouseLeave={()=>{this.setState({selectedIndex:-1})}}/>
                         </MenuContainer>
                         <SearchPad>
                              <SearchCategory >

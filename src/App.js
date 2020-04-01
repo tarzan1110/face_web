@@ -5,8 +5,8 @@ import Order from './screens/Order'
 
 function App() {
   return (
-    <Login/>
-    //  <Order/>
+    // <Login/>
+    <Order/>
   );
 }
 
