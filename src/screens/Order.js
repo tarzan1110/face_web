@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Menu from "../components/Menu";
 
 const COLOR_DAMSON = "#954f9f";
 const COLOR_GREY = "#83858f";
@@ -7,36 +8,6 @@ const COLOR_DARK_GREY = "#474950";
 const COLOR_NEED_REVIEW = "#4b4a50";
 const COLOR_LIGHT_BLACK = "#39393d";
 
-const MenuItem = ({
-  selected,
-  label,
-  onSelect,
-  onMouseEnter,
-  onMouseLeave
-}) => {
-  return (
-    <SelectedMenu
-      onClick={() => {
-        onSelect();
-      }}
-      onMouseEnter={() => {
-        !!onMouseEnter && onMouseEnter();
-      }}
-      onMouseLeave={() => {
-        !!onMouseLeave && onMouseLeave();
-      }}
-    >
-      <SelectedMenuBackgroundBar selected={selected} />
-      <SelectedMenuBackground
-        selected={selected}
-        src={require("../asset/rectangle.png")}
-        alt=""
-      >
-        {label}
-      </SelectedMenuBackground>
-    </SelectedMenu>
-  );
-};
 const CheckItem = () => {
   return <CheckItemImg src={require("../asset/check.png")} alt="" />;
 };
@@ -89,7 +60,7 @@ class Order extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedIndex: 0
+      selectedIndex: 0,
     };
   }
   render() {
@@ -97,60 +68,12 @@ class Order extends Component {
     return (
       <OrderScreenContainer>
         <NavBackground>
-          <MenuContainer>
-            <MenuItem
-              label={"Orders"}
-              selected={selectedIndex === 0}
-              onSelect={() => {
-                this.setState({ selectedIndex: 0 });
-              }}
-              onMouseEnter={() => {
-                this.setState({ selectedIndex: 0 });
-              }}
-              onMouseLeave={() => {
-                this.setState({ selectedIndex: -1 });
-              }}
-            />
-            <MenuItem
-              label={"Packages"}
-              selected={selectedIndex === 1}
-              onSelect={() => {
-                this.setState({ selectedIndex: 1 });
-              }}
-              onMouseEnter={() => {
-                this.setState({ selectedIndex: 1 });
-              }}
-              onMouseLeave={() => {
-                this.setState({ selectedIndex: -1 });
-              }}
-            />
-            <MenuItem
-              label={"Companies"}
-              selected={selectedIndex === 2}
-              onSelect={() => {
-                this.setState({ selectedIndex: 2 });
-              }}
-              onMouseEnter={() => {
-                this.setState({ selectedIndex: 2 });
-              }}
-              onMouseLeave={() => {
-                this.setState({ selectedIndex: -1 });
-              }}
-            />
-            <MenuItem
-              label={"Users"}
-              selected={selectedIndex === 3}
-              onSelect={() => {
-                this.setState({ selectedIndex: 3 });
-              }}
-              onMouseEnter={() => {
-                this.setState({ selectedIndex: 3 });
-              }}
-              onMouseLeave={() => {
-                this.setState({ selectedIndex: -1 });
-              }}
-            />
-          </MenuContainer>
+          <Menu
+            selectedIndex={selectedIndex}
+            onSelect={(index) => {
+              this.setState({ selectedIndex: index });
+            }}
+          />
           <SearchPad>
             <SearchCategory>
               <SearchTitle className="search-by">Search by:</SearchTitle>
@@ -167,7 +90,7 @@ class Order extends Component {
                   width: 17,
                   height: 17,
                   marginRight: 15,
-                  marginLeft: 10
+                  marginLeft: 10,
                 }}
               ></img>
               Last Name......
@@ -762,46 +685,6 @@ const CategorySymbol = styled.div`
   top: 0px;
 `;
 
-const SelectedMenu = styled.div`
-  cursor: pointer;
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  margin: 0 20px 0 20px;
-`;
-const SelectedMenuBackgroundBar = styled.div`
-  width: 100%;
-  height: 5px;
-  background-color: ${props => (props.selected ? "white" : "transparent")};
-`;
-const SelectedMenuBackground = styled.div`
-  width: 100%;
-  height: 64px;
-  background-image: ${props =>
-    props.selected ? 'url("/rectangle.png")' : "none"};
-  background-repeat: no-repeat;
-  background-size: 100% 64px;
-  display: flex;
-  align-items: center;
-  font-family: "Raleway";
-  justify-content: center;
-  color: #f7f8ff;
-  font-weight: bold;
-  font-size: 13px;
-`;
-const MenuContainer = styled.div`
-  width: 100%;
-  height: 64px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
 const TableHeader = styled.div`
   width: 100%;
   display: flex;
@@ -828,21 +711,21 @@ const TableContainer = styled.div`
 `;
 const CellItem = styled.div`
   font-weight: bold;
-  flex: ${props => props.flexPortion};
-  text-align: ${props => (props.center ? "center" : "left")};
-  color: ${props => props.color};
+  flex: ${(props) => props.flexPortion};
+  text-align: ${(props) => (props.center ? "center" : "left")};
+  color: ${(props) => props.color};
   font-size: 12px;
   font-family: "Gotham";
-  font-style: ${props => props.fontStyle};
+  font-style: ${(props) => props.fontStyle};
 `;
 const KeyCellItem = styled.div`
   font-weight: 500;
-  flex: ${props => props.flexPortion};
+  flex: ${(props) => props.flexPortion};
   text-align: left;
-  color: ${props => props.color};
+  color: ${(props) => props.color};
   font-size: 13px;
   font-family: "Gotham";
-  font-style: ${props => props.fontStyle};
+  font-style: ${(props) => props.fontStyle};
 `;
 const NeedReviewItemContainer = styled.div`
   height: 25px;
